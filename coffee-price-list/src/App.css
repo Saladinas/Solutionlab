@@ -1,10 +1,11 @@
 .Coffee-image {
   width: 100%;
+  height: 250px;
 }
 
-.Coffee-name {
+.Coffee-title {
   font-size: 24px;
-  margin-top: 15px;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -19,10 +20,6 @@
   height: 180px;
   padding: 20px;
   color: white;
-}
-
-.App-intro {
-  padding-top: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -46,4 +43,20 @@
 .col-centered {
     float: none;
     margin: 0 auto;
+}
+
+.Coffee-form {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.Information-block {
+    margin-top: 20px;
+}
+
+.Coffee-block {
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
