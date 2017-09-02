@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CoffeeList from './CoffeeList';
+import CoffeeForm from './CoffeeForm';
 
 var data = [{ id: 0, name: "Latte", price: "10", image: "http://sawadacoffee.com/wp-content/uploads/Sawada-Coffee-10DEC2015-003.jpg" },
 { id: 1, name: "Dark Coffee", price: "7", image: "http://www.legalreader.com/wp-content/uploads/2015/10/Coffee-Cup-Bowl-With-Grains-Images.jpg" },
@@ -18,9 +19,7 @@ class App extends Component {
           <h2>Coffee price list</h2>
         </div>
         <div className="App-intro container-fluid">
-          <div className="row">
-            <button type="submit" className="btn btn-primary btn-lg">+ Add</button>
-          </div>
+          <CoffeeForm />
           <CoffeeList data={data} />
         </div>
       </div>
