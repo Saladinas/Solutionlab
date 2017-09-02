@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+   text-align: center;
+   overflow: hidden;
 }
 
 .Coffee-image {
@@ -21,6 +22,7 @@
   height: 180px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-intro {
@@ -33,5 +35,20 @@
 }
 
 .Coffee-element {
-  margin: 10px;
+   margin: 10px;
+}
+
+.Image-block {
+   position: relative;
+   width: 100%; 
+}
+
+.Coffee-price {
+  position: absolute; 
+   text-align: right; 
+   background-color: gray;
+   bottom: 0; 
+   right: 0;
+   font-size: 24px;
+   padding: 5px;
 }
