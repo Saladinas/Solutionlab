@@ -1,6 +1,6 @@
 .Coffee-image {
   width: 100%;
-  height: 250px;
+  height: 250px; 
 }
 
 .Coffee-title {
@@ -31,6 +31,15 @@
    position: relative;  
 }
 
+.Coffee-removing   {
+   position: absolute; 
+   color: red;
+   top: -26px; 
+   right: -12px;
+   font-size: 24px;
+   cursor: pointer;
+}
+
 .Coffee-price {
    position: absolute; 
    background-color: gray;
@@ -39,6 +48,7 @@
    font-size: 24px;
    padding: 5px;
 }
+
 
 .col-centered {
     float: none;
@@ -52,11 +62,11 @@
 }
 
 .Information-block {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .Coffee-block {
   border-bottom: 1px solid black;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

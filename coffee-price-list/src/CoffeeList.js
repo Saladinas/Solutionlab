@@ -9,6 +9,7 @@ class CoffeeList extends React.Component {
                         <div className="Image-block">
                             <img className="Coffee-image" src={item.image} alt={item.name} />
                             <span className="Coffee-price">{item.price} Eur</span>
+                            <span className="Coffee-removing">x</span>
                         </div>
                         <div className="Coffee-title">{item.title}</div>
                     </div>
