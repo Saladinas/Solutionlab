@@ -18,11 +18,18 @@ class App extends Component {
     })
 
     this.addCoffee = this.addCoffee.bind(this);
+    this.removeCoffee = this.removeCoffee.bind(this);
   }
 
   addCoffee(data) {
     this.setState({
       coffee: this.state.coffee.concat([data])
+    });
+  }
+
+  removeCoffee(id) {
+    this.setState({
+      coffee: this.state.coffee.filter((coffee) => coffee.id !== id)
     });
   }
 
@@ -35,7 +42,7 @@ class App extends Component {
         </div>
         <div className="App-intro container-fluid">
           <CoffeeForm addCoffee={this.addCoffee} />
-          <CoffeeList data={this.state.coffee} />
+          <CoffeeList removeCoffee={this.removeCoffee} data={this.state.coffee} />
         </div>
       </div>
     );

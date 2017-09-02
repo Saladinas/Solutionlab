@@ -37,6 +37,7 @@ class CoffeeForm extends React.Component {
             <div className="row Information-block">
                 <div className="col-md-4 col-centered Coffee-form">
                     <h2 className="text-center">Add new coffee!</h2>
+                    <img className="Coffee-form-image" src={this.state.image} alt={this.state.title} />
                     <form>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Title</label>
