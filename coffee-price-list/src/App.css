@@ -80,8 +80,7 @@
     margin-right: auto
 }
 
-.txt {
-display: block;
-    margin-left: auto;
-    margin-right: auto
+.Add-coffee-button {
+  display: block;
+  margin: 10px auto 10px auto;
 }
