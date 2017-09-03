@@ -9,14 +9,18 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    var coffee = [{ id: 0, title: "Latte", price: "10", image: "http://sawadacoffee.com/wp-content/uploads/Sawada-Coffee-10DEC2015-003.jpg" },
+    { id: 1, title: "Dark Coffee", price: "7", image: "http://www.legalreader.com/wp-content/uploads/2015/10/Coffee-Cup-Bowl-With-Grains-Images.jpg" },
+    { id: 2, title: "Cappuccino", price: "5", image: "https://www.nespresso.com/ncp/res/uploads/recipes/377c71f2069b1dba47f10aeb701d576d889101ee.jpg" },
+    { id: 3, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" },
+    { id: 4, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" }];
+
+    sessionStorage.setItem('coffeeList', JSON.stringify(coffee));
+
     this.buttonState = 'Show form';
     this.state = ({
       showResults: false,
-      coffee: [{ id: 0, title: "Latte", price: "10", image: "http://sawadacoffee.com/wp-content/uploads/Sawada-Coffee-10DEC2015-003.jpg" },
-      { id: 1, title: "Dark Coffee", price: "7", image: "http://www.legalreader.com/wp-content/uploads/2015/10/Coffee-Cup-Bowl-With-Grains-Images.jpg" },
-      { id: 2, title: "Cappuccino", price: "5", image: "https://www.nespresso.com/ncp/res/uploads/recipes/377c71f2069b1dba47f10aeb701d576d889101ee.jpg" },
-      { id: 3, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" },
-      { id: 4, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" }]
+      coffee: JSON.parse(sessionStorage.getItem('coffeeList'))
     })
 
     this.addCoffee = this.addCoffee.bind(this);
@@ -25,14 +29,20 @@ class App extends Component {
   }
 
   addCoffee(data) {
+    var newSessionData = JSON.parse(sessionStorage.getItem('coffeeList')).concat([data]);
+    sessionStorage.setItem('coffeeList', JSON.stringify(newSessionData));
+
     this.setState({
-      coffee: this.state.coffee.concat([data])
+      coffee: JSON.parse(sessionStorage.getItem('coffeeList'))
     });
   }
 
   removeCoffee(id) {
+    var newSessionData = JSON.parse(sessionStorage.getItem('coffeeList')).filter((coffee) => coffee.id !== id);
+    sessionStorage.setItem('coffeeList', JSON.stringify(newSessionData));
+
     this.setState({
-      coffee: this.state.coffee.filter((coffee) => coffee.id !== id)
+      coffee: JSON.parse(sessionStorage.getItem('coffeeList'))
     });
   }
 
@@ -55,7 +65,6 @@ class App extends Component {
           <h2>Coffee price list</h2>
         </div>
         <div className="App-intro container-fluid">
-          {/* <CoffeeForm addCoffee={this.addCoffee} /> */}
           {this.state.showResults ? <CoffeeForm addCoffee={this.addCoffee} /> : null}
           <button type="button" onClick={this.changeState} className="btn btn-primary btn-lg Add-coffee-button">{this.buttonState}</button>
           <hr />
