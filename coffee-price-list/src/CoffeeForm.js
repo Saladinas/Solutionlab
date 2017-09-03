@@ -65,21 +65,23 @@ class CoffeeForm extends React.Component {
     }
 
     addCoffee() {
-        this.setState({
-            id: Math.floor(Math.random() * (100000 - 1)) + 1
-        });
-        this.props.addCoffee(this.state);
+        let newCoffee = {
+            id: Math.floor(Math.random() * (100000 - 1)) + 1,
+            title: this.state.title,
+            price: this.state.price,
+            image: this.state.image
+        }
+        this.props.addCoffee(newCoffee);
     }
 
     errorClass(error) {
-        console.log(error.length);
         return (error.length === 0 ? '' : 'has-error');
     }
 
     render() {
         return (
             <div className="row Information-block">
-                <div className="col-md-4 col-centered Coffee-form">
+                <div className="col-md-4 col-xs-6 col-centered Coffee-form">
                     <h2 className="text-center">Add new coffee!</h2>
                     <form>
                         <div className={`form-group row
@@ -106,7 +108,9 @@ class CoffeeForm extends React.Component {
                         <div className="panel panel-default">
                             <FormErrors formErrors={this.state.formErrors} />
                         </div>
-                        <button type="button" disabled={!this.state.formValid} onClick={this.addCoffee} className="btn btn-primary">Add</button>
+                        <button type="button" disabled={!this.state.formValid} onClick={this.addCoffee} className="btn btn-primary">
+                            <span className="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                        </button>
                     </form>
                 </div>
             </div >
