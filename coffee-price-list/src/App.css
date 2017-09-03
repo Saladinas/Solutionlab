@@ -1,23 +1,3 @@
-.Coffee-image {
-  width: 100%;
-  height: 250px; 
-}
-
-.Form-Errors {
-  padding: 5px;
-}
-
-.Coffee-title {
-  font-size: 24px;
-  margin-top: 5px;
-  text-align: center;
-}
-
-.Icon {
-  color: red;
-  margin-right: 5px;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -40,66 +20,16 @@
    position: relative;  
 }
 
-.Coffee-removing   {
-   position: absolute; 
-   color: red;
-   top: -26px; 
-   right: -12px;
-   font-size: 24px;
-   cursor: pointer;
-}
-
 .Middle {
    display: flex;
    align-items: center;
 }
-
-.Coffee-price {
-   display: inline-block;
-   vertical-align: middle;
-   float: none;
-   position: absolute; 
-   background-color: gray;
-   /* border-radius: 5px; */
-   bottom: 0; 
-   right: 0;
-   font-size: 24px;
-   padding: 5px;
-}
-
 
 .col-centered {
     float: none;
     margin: 0 auto;
 }
 
-.Coffee-form {
-  background-color: rgba(30, 87, 153, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-}
-
 .Information-block {
     margin-top: 30px;
-}
-
-.Coffee-block {
-   margin-bottom: 20px;
-   background-color: transparent;
-   background-image: linear-gradient(to top, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
-   background-repeat: repeat;
-   border-radius:10px;
-   padding: 5px;
-}
-
-.Coffee-form-image {
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.Add-coffee-button {
-  display: block;
-  margin: 10px auto 10px auto;
 }

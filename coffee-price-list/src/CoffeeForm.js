@@ -1,22 +1,23 @@
 import React from 'react';
 import FormErrors from './FormErrors';
+import './CoffeeForm.css';
+
+const initialState = {
+    id: undefined,
+    title: '',
+    price: '',
+    image: undefined,
+    formErrors: { title: '', price: '', image: '' },
+    titleValid: false,
+    priceValid: false,
+    imageValid: false,
+    formValid: false
+};
 
 class CoffeeForm extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            id: undefined,
-            title: '',
-            price: '',
-            image: undefined,
-            formErrors: { title: '', price: '', image: '' },
-            titleValid: false,
-            priceValid: false,
-            imageValid: false,
-            formValid: false
-        };
-
+        this.state = this.state = initialState;
         this.handleInputChange = this.handleInputChange.bind(this);
         this.addCoffee = this.addCoffee.bind(this);
     }
@@ -43,11 +44,11 @@ class CoffeeForm extends React.Component {
                 break;
             case 'price':
                 priceValid = value.length > 0;
-                fieldValidationErrors.price = priceValid ? '' : 'field is empty.';
+                fieldValidationErrors.price = priceValid ? '' : 'is empty.';
                 break;
             case 'image':
                 imageValid = value.length > 0;
-                fieldValidationErrors.image = imageValid ? '' : 'field is empty.';
+                fieldValidationErrors.image = imageValid ? '' : 'is empty.';
                 break;
             default:
                 break;
@@ -72,6 +73,7 @@ class CoffeeForm extends React.Component {
             image: this.state.image
         }
         this.props.addCoffee(newCoffee);
+        this.setState(initialState);
     }
 
     errorClass(error) {

@@ -1,0 +1,19 @@
+.Add-coffee-button {
+  display: block;
+  margin: 10px auto 10px auto;
+}
+
+.Coffee-form {
+  background-color: rgba(30, 87, 153, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.Error-icon {
+  color: red;
+  margin-right: 5px;
+}
+
+.Form-errors {
+  padding: 5px;
+}

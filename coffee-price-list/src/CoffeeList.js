@@ -1,4 +1,5 @@
 import React from 'react';
+import './CoffeeList.css';
 
 class CoffeeList extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class CoffeeList extends React.Component {
                     return <div className="col-xs-3" key={item.id}>
                         <div className="Coffee-block">
                             <div className="Image-block">
-                                <img className="Coffee-image" src={item.image} alt={item.name} onError={(event) => event.target.setAttribute("src", "http://tekeye.uk/md_cms/images/placeholder-250px.png")} />
+                                <img className="Coffee-image" src={item.image} alt={item.name} onError={(event) => event.target.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Coffee_cup_icon.svg/250px-Coffee_cup_icon.svg.png")} />
                                 <span className="Coffee-price">{item.price} <span className="glyphicon glyphicon-eur" aria-hidden="true"></span></span>
                                 <span className="Coffee-removing" onClick={() => this.removeCoffee(item.id)}>x</span>
                             </div>

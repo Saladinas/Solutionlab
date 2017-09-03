@@ -9,18 +9,17 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // var coffee = [{ id: 0, title: "Latte", price: "10", image: "http://sawadacoffee.com/wp-content/uploads/Sawada-Coffee-10DEC2015-003.jpg" },
-    // { id: 1, title: "Dark Coffee", price: "7", image: "http://www.legalreader.com/wp-content/uploads/2015/10/Coffee-Cup-Bowl-With-Grains-Images.jpg" },
-    // { id: 2, title: "Cappuccino", price: "5", image: "https://www.nespresso.com/ncp/res/uploads/recipes/377c71f2069b1dba47f10aeb701d576d889101ee.jpg" },
-    // { id: 3, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" },
-    // { id: 4, title: "Milk Coffee", price: "8.8", image: "http://2fhjuw36qc3g36anx54adxd2nje.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/Coffee-6.png" }];
-
-    // sessionStorage.setItem('coffeeList', JSON.stringify(coffee));
-
     this.buttonState = 'Show form';
+
+    if (JSON.parse(sessionStorage.getItem('coffeeList')) !== null) {
+      var coffeeList = JSON.parse(sessionStorage.getItem('coffeeList'));
+    } else {
+      coffeeList = [];
+    }
+
     this.state = ({
       showResults: false,
-      coffee: JSON.parse(sessionStorage.getItem('coffeeList'))
+      coffee: coffeeList
     })
 
     this.addCoffee = this.addCoffee.bind(this);
@@ -58,6 +57,7 @@ class App extends Component {
     } else {
       this.buttonState = ' Hide form'
     }
+    
     this.setState({
       showResults: !this.state.showResults,
     });
@@ -79,6 +79,7 @@ class App extends Component {
           </button>
           <hr />
           {this.state.coffee ? <CoffeeList removeCoffee={this.removeCoffee} data={this.state.coffee} /> : null}
+          {this.state.coffee.length === 0 ? <h2 className="text-center">Add some coffees!</h2> : null}
         </div>
       </div>
     );
