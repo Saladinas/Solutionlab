@@ -8,7 +8,7 @@ class CoffeeForm extends React.Component {
             id: 5,
             title: '',
             price: '',
-            image: 'http://sawadacoffee.com/wp-content/uploads/Sawada-Coffee-10DEC2015-003.jpg'
+            image: undefined
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
